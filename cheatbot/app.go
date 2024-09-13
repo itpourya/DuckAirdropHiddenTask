@@ -18,6 +18,7 @@ func GenarateAPP() *telebot.Bot {
 	}
 
 	app.Handle("/start", start)
+	app.Handle(telebot.OnText, text)
 
 	return app
 }
