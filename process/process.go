@@ -11,12 +11,11 @@ import (
 )
 
 const (
-	contentType   = "application/json"
-	authurization = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIxNDQ4MzQyLCJ0aW1lc3RhbXAiOjE3MjYyMjYxMTc5MzksInR5cGUiOjEsImlhdCI6MTcyNjIyNjExNywiZXhwIjoxNzI2ODMwOTE3fQ.HQeFaaC_dNR5DL7Hal5pLNUOCmhLm3hNbeTaPjc0Szw" // TOKEN
-	API_URL       = "https://api.apiduck.xyz/user-partner-mission/claim"
+	contentType = "application/json"
+	API_URL     = "https://api.apiduck.xyz/user-partner-mission/claim"
 )
 
-func DoProcess(ID int, wg *sync.WaitGroup) {
+func DoProcess(ID int, wg *sync.WaitGroup, authurization string) {
 	defer wg.Done()
 
 	payload, err := json.Marshal(
